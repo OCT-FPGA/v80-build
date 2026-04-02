@@ -1,3 +1,6 @@
+REMOTEDESKTOP=$1
+TOOLVERSION=$2
+
 sudo apt update
 
 sudo apt install -y libxml2-dev libzmq3-dev libjsoncpp-dev xvfb
@@ -11,3 +14,13 @@ sudo apt install -y /share/tools/v80/vitis-flow/vrt/amd-vrt_1.0.0_2025-11-25-03-
 
 #Install QDMA driver
 cp -r /share/tools/v80/vitis-flow/qdma_drv/linux-kernel/ /tmp && cd /tmp/linux-kernel/ && make && make install
+
+
+if [ $REMOTEDESKTOP == "True" ] ; then
+    echo "Installing remote desktop software"
+    apt install -y ubuntu-gnome-desktop
+    echo "Installed gnome desktop"
+    systemctl set-default multi-user.target
+    apt install -y tigervnc-standalone-server
+    echo "Installed vnc server"
+fi
