@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 REMOTEDESKTOP=$1
 TOOLVERSION=$2
 
