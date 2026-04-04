@@ -21,6 +21,8 @@ sudo apt install -y /share/tools/v80/vitis-flow/vrt/amd-vrt_1.0.0_2025-11-25-03-
 #Install QDMA driver
 cp -r /share/tools/v80/vitis-flow/qdma_drv/linux-kernel/ /tmp && cd /tmp/linux-kernel/ && make && make install
 
+bash -c "echo '198.22.255.6 xilinxlm' >> /etc/hosts"
+
 
 if [ $REMOTEDESKTOP == "True" ] ; then
     echo "Installing remote desktop software"
