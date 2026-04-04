@@ -6,6 +6,10 @@ TOOLVERSION=$2
 sudo apt update
 
 sudo apt install -y libxml2-dev libzmq3-dev libjsoncpp-dev xvfb
+
+# For VRT
+sudo apt install -y doxygen texlive-latex-base texlive-latex-extra texlive-latex-recommended
+
 sudo apt-get install libaio-dev
 
 #Install AMI
