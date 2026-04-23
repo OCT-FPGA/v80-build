@@ -1,5 +1,9 @@
 #!/usr/bin/env bash
 
+setup_licenseserver(){
+    bash -c "echo '198.22.255.6 octlm' >> /etc/hosts"
+}
+
 REMOTEDESKTOP=$1
 TOOLVERSION=$2
 
@@ -21,7 +25,7 @@ sudo apt install -y /share/tools/v80/vitis-flow/vrt/amd-vrt_1.0.0_2025-11-25-03-
 #Install QDMA driver
 cp -r /share/tools/v80/vitis-flow/qdma_drv/linux-kernel/ /tmp && cd /tmp/linux-kernel/ && make && make install
 
-bash -c "echo '198.22.255.6 octlm' >> /etc/hosts"
+setup_licenseserver
 
 
 if [ $REMOTEDESKTOP == "True" ] ; then
