@@ -1,5 +1,12 @@
 #!/usr/bin/env bash
 
+mount_filesystems() {
+    sudo mkdir -p /fpga/Intel /fpga/Xilinx /fpga/tools
+    sudo mount -t nfs -o nolock ops.cloudlab.umass.edu:/fpga/Intel /fpga/Intel
+    sudo mount -t nfs -o nolock ops.cloudlab.umass.edu:/fpga/Xilinx /fpga/Xilinx
+    sudo mount -t nfs -o nolock ops.cloudlab.umass.edu:/fpga/tools /fpga/tools
+}
+
 setup_licenseserver(){
     bash -c "echo '198.22.255.6 octlm' >> /etc/hosts"
 }
@@ -25,6 +32,7 @@ sudo apt update
 #Install QDMA driver
 #cp -r /fpga/tools/v80/vitis-flow/qdma_drv/linux-kernel/ /tmp && cd /tmp/linux-kernel/ && make && make install
 
+mount_filesystems
 setup_licenseserver
 
 
