@@ -32,9 +32,12 @@ sudo apt update
 #Install QDMA driver
 #cp -r /fpga/tools/v80/vitis-flow/qdma_drv/linux-kernel/ /tmp && cd /tmp/linux-kernel/ && make && make install
 
+BASE_DIR="/fpga"
+VITIS_BASE_PATH="$BASE_DIR/Xilinx/2025.1/Vitis"
+
 mount_filesystems
 setup_licenseserver
-
+bash -c "echo 'source $VITIS_BASE_PATH/settings64.sh' >> /etc/profile"
 
 if [ $REMOTEDESKTOP == "True" ] ; then
     echo "Installing remote desktop software"
