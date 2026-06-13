@@ -11,9 +11,9 @@ setup_licenseserver(){
     bash -c "echo '198.22.255.6 octlm' >> /etc/hosts"
 }
 
-install_pkg(){
-    sudo apt install -y cmake pkg-config ninja-build libxml2-dev libzmq3-dev libjsoncpp-dev zlib1g-dev libsystemd-dev libinih-dev libcli11-dev linux-headers-$(uname -r)
-}
+#install_pkg(){
+#    sudo apt install -y cmake pkg-config ninja-build libxml2-dev libzmq3-dev libjsoncpp-dev zlib1g-dev libsystemd-dev libinih-dev libcli11-dev linux-headers-$(uname -r)
+#}
 
 REMOTEDESKTOP=$1
 TOOLVERSION=$2
@@ -41,7 +41,7 @@ VITIS_BASE_PATH="$BASE_DIR/Xilinx/2025.1/Vitis"
 
 mount_filesystems
 setup_licenseserver
-install_pkg
+#install_pkg
 bash -c "echo 'source $VITIS_BASE_PATH/settings64.sh' >> /etc/profile"
 
 if [ $REMOTEDESKTOP == "True" ] ; then
