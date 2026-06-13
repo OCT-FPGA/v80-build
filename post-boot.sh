@@ -12,7 +12,7 @@ setup_licenseserver(){
 }
 
 install_pkg(){
-    sudo apt install \
+    sudo apt install -y \
     build-essential cmake ninja-build pkg-config rsync \
     debhelper dpkg-dev apt-utils \
     python3 python3-pip \
