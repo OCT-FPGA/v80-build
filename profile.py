@@ -8,7 +8,7 @@ import geni.rspec.emulab as emulab
 pc = portal.Context()
 request = pc.makeRequestRSpec()
 
-RAM = [16, 32, 64]
+RAM = [16, 32, 64, 128]
 CPU = [2, 4, 8]
 toolVersion = ['2025.1'] 
 
