@@ -23,7 +23,6 @@ install_pkg(){
 install_libs(){
     echo "Installing Vitis $TOOLVERSION libraries"
     $VITIS_BASE_PATH/scripts/installLibs.sh
-    bash -c "echo 'source $VITIS_BASE_PATH/$TOOLVERSION/settings64.sh' >> /etc/profile"
 }
 
 REMOTEDESKTOP=$1
