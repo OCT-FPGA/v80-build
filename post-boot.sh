@@ -20,6 +20,12 @@ install_pkg(){
     libsystemd-dev libxml2-dev libzmq3-dev zlib1g-dev
 }
 
+install_libs(){
+    echo "Installing Vitis $TOOLVERSION libraries"
+    $VITIS_BASE_PATH/scripts/installLibs.sh
+    bash -c "echo 'source $VITIS_BASE_PATH/$TOOLVERSION/settings64.sh' >> /etc/profile"
+}
+
 REMOTEDESKTOP=$1
 TOOLVERSION=$2
 
@@ -47,6 +53,8 @@ VITIS_BASE_PATH="$BASE_DIR/Xilinx/2025.1/Vitis"
 mount_filesystems
 setup_licenseserver
 install_pkg
+install_libs
+
 bash -c "echo 'source $VITIS_BASE_PATH/settings64.sh' >> /etc/profile"
 
 if [ $REMOTEDESKTOP == "True" ] ; then
