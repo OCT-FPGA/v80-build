@@ -55,6 +55,7 @@ install_pkg
 install_libs
 
 bash -c "echo 'source $VITIS_BASE_PATH/settings64.sh' >> /etc/profile"
+bash -c "echo 'export XILINXD_LICENSE_FILE=2100@octlm' >> /etc/profile"
 
 if [ $REMOTEDESKTOP == "True" ] ; then
     echo "Installing remote desktop software"
